@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>#hispanoFail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tutorial-page">
+
+  <ion-slides pager #bigSlider>
+
+<!-- PAGINA 01 -->
+    <ion-slide>
+
+
+      <h2 class="slide-title">Benvingut!</h2>
+      <p >hispanoFail és una app de la ciutadania per la tramitació d'incidències del servei de bus a Esparreguera.<br><br>
+
+Les incidències introduïdes amb l’app s’enviaran de manera automàtica al
+regidor de Mobilitat.<br><br>També, es publicaran anònimament al twitter sota el hashtag #hispanofail  per facilitar-ne un
+control ciutadà.<br></p>
+
+     <div class="info"> <a href="http://hispanofail.cat">
+        www.hispanofail.cat</a>
+        
+        <br>
+      
+      <a href="https://twitter.com/HispanoFailApp">
+        @hispanoFailApp</a>
+     </div>
+    <button class="fullbutton" ion-button full (click)="goToSlide(1)">OK! Introduir incidència</button>
+    </ion-slide>
+
+<!-- PAGINA 02 -->
+     <ion-slide>
+
+      <h2 class="slide-title">Selecciona incidència</h2>
+
+
+<form #myForm2='ngForm'>
+      <ion-item class=input>
+        <ion-label>El bus arriba amb retard</ion-label>
+        <ion-checkbox color="blue" checked="false" name="busRetard" [(ngModel)]="data.busRetard"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class=input>
+        <ion-label>El bus no ha passat</ion-label>
+        <ion-checkbox color="blue" checked="false" name="busNoPassa" [(ngModel)]="data.busNoPassa"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class=input>
+        <ion-label>Em fan anar dret al passadís</ion-label>
+        <ion-checkbox color="blue" checked="false" name="busDret" [(ngModel)]="data.busDret"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class=input>
+        <ion-label>El bus anava ple i no puc pujar</ion-label>
+        <ion-checkbox color="blue" checked="false" name="busPle" [(ngModel)]="data.busPle"></ion-checkbox>
+      </ion-item>
+
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Línia</ion-label>
+          <ion-select name="linia" [(ngModel)]="data.linia">
+
+            <ion-option value="1">IGLD-BCN</ion-option>
+            <ion-option value="2">IGLD-UAB</ion-option>
+            <ion-option value="3">ESP-MARTO</ion-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+    <button class="fullbutton" ion-button full (click)="goToSlide(2)">FET! Següent pas</button>
+
+  </form>
+
+    </ion-slide>
+
+
+<!-- PAGINA 03 -->
+
+
+ 
+    <ion-slide>
+
+      <h2 class="slide-title">Introdueix les teves dades*</h2>
+
+      <form #myForm='ngForm' (ngSubmit)="onSubmit()">
+
+          <ion-list class="list">
+
+              <ion-item class=input>
+                <ion-input type="text" placeholder="Nom" name="Nom"  [(ngModel)]="data.Nom" required></ion-input>
+              </ion-item>
+
+              <ion-item class=input>
+                <ion-input type="text" placeholder="Cognoms"  name="Cognom"  [(ngModel)]="data.Cognom" required></ion-input>
+              </ion-item>
+
+              <ion-item class=input>
+                <ion-input type="text" placeholder="DNI"  name="DNI" [(ngModel)]="data.DNI" required></ion-input>
+              </ion-item>
+
+              <ion-item class=input>
+                <ion-input type="tel" placeholder="Telèfon (opcional)"  name="Telefon"  [(ngModel)]="data.Telefon" ></ion-input>
+              </ion-item>
+
+          </ion-list>
+
+      <ion-item class=input>
+        <ion-label class=input>Accepto la política de privadesa</ion-label>
+        <ion-checkbox color="red"  name="Politica" [(ngModel)]="data.politicaPrivadesa" required></ion-checkbox>
+
+<!--        <ion-checkbox color="red" checked="false" required [(ngModel)]="checkStatus.checked" ></ion-checkbox> -->
+      </ion-item>
+
+      <a href="http://hispanofail.cat/politica-de-privadesa">Llegir política de privadesa.</a><br>
+
+
+      <b>*Les dades introduïdes s’usaran únicament per enviar i arxivar la incidència al nostre web.</b>
+
+      <button class="fullbutton" ion-button full [disabled]="!myForm.form.valid">SOM-HI! Enviar la incidència</button>
+
+      </form>
+
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
