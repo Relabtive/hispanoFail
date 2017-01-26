@@ -12,7 +12,9 @@ export class SyncService {
 		let json = JSON.stringify(incidencia);
 		let params = "json="+json;
 		let headers = new Headers({"Content-Type":"application/x-www-form-urlencoded"});
-		return this._http.post("http://hispanofail.relabtive.es/slim/restaurantes-api.php/insertQueixa", params, {headers: headers}).map(res => res.json());
+		
+		//This code syncs with your ApiRest, if you don't setup this, DB connection doesn't work
+		return this._http.post("http://customApiRest.com", params, {headers: headers}).map(res => res.json());
 	}
 	
 
