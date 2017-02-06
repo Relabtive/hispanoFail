@@ -12,7 +12,10 @@ export class incidencia {
         public busDret:boolean,
         public busPle:boolean,
         public linia:number,
-		public politicaPrivadesa:boolean
+		public politicaPrivadesa:boolean,
+		public estacio:number,
+		public data:string,
+		public hora:string
        
 	){}
 }
