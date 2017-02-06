@@ -56,7 +56,36 @@ control ciutadà.<br></p>
         <ion-label>El bus anava ple i no puc pujar</ion-label>
         <ion-checkbox color="blue" checked="false" name="busPle" [(ngModel)]="data.busPle"></ion-checkbox>
       </ion-item>
+      <ion-item class=input>
+        <ion-label>No hi ha fulls de reclamacions</ion-label>
+        <ion-checkbox color="blue" checked="false" name="BusNoFulls" [(ngModel)]="data.busNoFulls"></ion-checkbox>
+      </ion-item>
 
+
+
+
+
+    <button class="fullbutton" ion-button full (click)="goToSlide(2)">FET! Següent pas</button>
+
+  </form>
+
+    </ion-slide>
+
+
+<!-- PAGINA 03 -->
+     <ion-slide>
+
+      <h2 class="slide-title">Localitza la incidència</h2>
+
+
+<form #myForm2='ngForm'>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Data</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" name="dia" [(ngModel)]="data.dia"></ion-datetime>
+      </ion-item>
+    </ion-list>
 
       <ion-list>
         <ion-item>
@@ -71,15 +100,49 @@ control ciutadà.<br></p>
         </ion-item>
       </ion-list>
 
+    <ion-list>
+      <ion-item>
+        <ion-label>Horari del bus</ion-label>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" name="hora" [(ngModel)]="data.hora"></ion-datetime>
+      </ion-item>
+    </ion-list>
 
-    <button class="fullbutton" ion-button full (click)="goToSlide(2)">FET! Següent pas</button>
+      <ion-list>
+        <ion-item>
+          <ion-label>Parada</ion-label>
+          <ion-select name="estacio" [(ngModel)]="data.estacio">
+
+            <ion-option value="1">Esparreguera</ion-option>
+            <ion-option value="2">Barcelona (Zona Univ)</ion-option>
+            <ion-option value="3">Barcelona (Zona Palau Reial)</ion-option>
+            <ion-option value="4">Barcelona (Zona Mª Cristina)</ion-option>
+            <ion-option value="5">Igualada (antic Correus)</ion-option>
+            <ion-option value="6">Igualada (Estació)</ion-option>
+            <ion-option value="7">Abrera (Pça Rebato)</ion-option>
+            <ion-option value="8">Abrera (Av. Generalitat)</ion-option>
+            <ion-option value="9">El Bruc (Monts. Park)</ion-option>
+            <ion-option value="10">El Bruc (El Bruc)</ion-option>
+            <ion-option value="11">Barcelona (Sants)</ion-option>          
+            <ion-option value="12">Castellolí</ion-option>
+            <ion-option value="13">Collbató</ion-option>
+            <ion-option value="14">Martorell (Centre Urbà)</ion-option>          
+            <ion-option value="15">Martorell ("El congost")</ion-option>   
+            <ion-option value="16">Martorell (Hospital Psi.)</ion-option>  
+            <ion-option value="17">Sta. Margarida de M.</ion-option>
+            <ion-option value="18">UAB</ion-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+    <button class="fullbutton" ion-button full (click)="goToSlide(3)">OK! Continuar</button>
 
   </form>
 
     </ion-slide>
 
-
-<!-- PAGINA 03 -->
+<!-- PAGINA 04 -->
 
 
  

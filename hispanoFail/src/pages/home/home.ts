@@ -54,7 +54,10 @@ export class HomePage {
          false,
          false,
          null,
-         false)
+         false,
+         null,
+         "",
+         "")
        
     }
 
@@ -79,7 +82,7 @@ presentLoading() {
 
 
         onSubmit() {
-          if((this.data.linia != null)&&((this.data.busRetard == true)||(this.data.busNoPassa == true)||(this.data.busDret == true)||(this.data.busPle == true))){
+          if((this.data.linia != null)&&(this.data.dia != null)&&(this.data.estacio != null)&&(this.data.hora != null)&&((this.data.busRetard == true)||(this.data.busNoPassa == true)||(this.data.busDret == true)||(this.data.busPle == true)||(this.data.BusNoFulls == true))){
             if(this.data.politicaPrivadesa == true){
                           console.log("function onSubmit()");
                             //send loading
