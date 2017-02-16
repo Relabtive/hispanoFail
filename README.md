@@ -11,7 +11,7 @@ Incident notification handler for the local bus service of the Esparreguera's vi
 [Ionic2](https://ionicframework.com/docs/) enviroment required.
 
 App connects to a MySql database using API REST to insert data from user forms inside the App. 
-We use [Slim](https://www.slimframework.com/) to write our API.
+We use [Slim](https://www.slimframework.com/) to write our API. (we provide apiSample.php to help this setup.)
 When API REST is setting up on the server, just need to pass the correct URL in this file:
 hispanoFail/hispanoFail/src/pages/services/service.ts 
 
