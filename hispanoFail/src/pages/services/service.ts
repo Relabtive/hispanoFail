@@ -13,8 +13,8 @@ export class SyncService {
 		let params = "json="+json;
 		let headers = new Headers({"Content-Type":"application/x-www-form-urlencoded"});
 		
-		//This code syncs with your ApiRest, if you don't setup this, DB connection doesn't work
-		return this._http.post("http://customApiRest.com", params, {headers: headers}).map(res => res.json());
+		//This code syncs with your Slim ApiRest, if you don't setup this, DB connection doesn't work
+		return this._http.post("http://customApiRest.com/slim/apiSample.php/insertSomething", params, {headers: headers}).map(res => res.json());
 	}
 	
 
